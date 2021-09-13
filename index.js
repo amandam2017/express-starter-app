@@ -39,7 +39,7 @@ app.post('/buy', function(req, res){
 
 	})
 
-	// res.redirect('/');
+	res.redirect('/');
 
 })
 

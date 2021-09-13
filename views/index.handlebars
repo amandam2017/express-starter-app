@@ -14,6 +14,30 @@
 
 
 <div class="container">
+
+
+    <div class="row">
+        <table class="twelve columns box">
+            <tr>
+                <td>Small total</td>
+                <td>R<span class="smallPizza">{{smallCost}}</span> </td>
+            </tr>
+            <tr>
+                <td>Medium total</td>
+                <td>R<span class="medPizza">{{mediumCost}}</span> </td>
+            </tr>
+            <tr>
+                <td>Large total</td>
+                <td>R<span class="lrgPizza">{{largeCost}}</span> </td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td> R<span class="grandTotal">{{totals.grandTotal}}</span> </td>
+            </tr>
+        </table>
+        <button class="button" type="submit" name="buy">ORDER</button>
+
+    </div>
     <div class="row">
     {{!-- Start here --}}
     <div class="four columns box small--bgr">

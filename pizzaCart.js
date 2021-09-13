@@ -2,23 +2,34 @@
 
 module.exports = function Pizzas(){
 
-    let smallCost;
-    let mediumCost;
-    let largeCost;
+    let smallCost = 0;
+    let mediumCost = 0;
+    let largeCost = 0;
 
-    function addPizzas(pizzaSize) {
-        let smallCost = 31.99;
-        let mediumCost = 58.99;
-        let largeCost = 87.99;
+    function setPizzas (pizzas) {
+        smallCost = Number(pizzas.smallCost);
+        mediumCost = Number(pizzas.mediumCost);
+        largeCost = Number(pizzas.largeCost);
+    }
+
+    function getPizzas() {
+        return {
+            smallCost,
+            mediumCost,
+            largeCost
+        }
+    }
+
+    function buyingPizza(pizzaSize) {
 
         if (pizzaSize === 'small'){
-            cost = smallCost;
+            smallCost += 31.99;
         }
         else if (pizzaSize === 'medium' ){
-            cost = mediumCost;
+            mediumCost += 58.99;
         }
         else if (pizzaSize === 'large' ){
-            cost = largeCost;
+            largeCost += 87.99;
         }
     }
 
@@ -27,24 +38,41 @@ module.exports = function Pizzas(){
         return smallCost +  smallCost + smallCost;
     }
 
-    function getsmallCost(){
+    function getsmallCostTotal(){
         return smallCost;   
     }
 
-    function getMediumCost(){
+    function getMediumCostTotal(){
         return mediumCost;
     }
 
-    function getlargeCost(){
+    function getlargeCostTotal(){
         return largeCost;
     }
 
+    // function pizzaTotals() {
+
+    //     let smallCost = getTotal('small').toFixed(2)
+    //     let mediumCost = getTotal('medium').toFixed(2)
+    //     let largeCost = getTotal('large').toFixed(2)
+
+        
+    //     return {
+    //         smsTotal,
+    //         callTotal,
+    //         grandTotal : grandTotal().toFixed(2)
+    //     }
+    // }
+
 
     return{
-        addPizzas,
+        setPizzas,
+        getPizzas,
+        buyingPizza,
         grandPizzaTotal,
-        getsmallCost,
-        getMediumCost,
-        getlargeCost
+        getsmallCostTotal,
+        getMediumCostTotal,
+        getlargeCostTotal,
+        // pizzaTotals
     }
 }
