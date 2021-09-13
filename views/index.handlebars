@@ -1,15 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+</head>
+<body>
+
 <h1>Counter Index</h1>
 
 
-<div>
-    Start here
+<div class="container">
+    <div class="row">
+    {{!-- Start here --}}
+    <div class="four columns box small--bgr">
+    <form action="/buy" method="POST" class="small">
+        <h2>Small Pizza</h2>
+        <label>R31.99</label>
+        <p>Small pizza with 3 toppings</p>
+        <ul>
+            <li>1 meat topping.</li>
+            <li>3 or less other toppings.</li>
+        </ul>
+        <button class="button" type="submit" name="buy">BUY</button>
+    </form>
+    </div>
 
-    <form action="/count" method="post">
+    <div class="four columns box med--bgr ">
+    <form action="/buy" method="POST" class="medium">
+    <h2>Medium Pizza</h2>
+        <label>R31.99</label>
+        <p>Small pizza with 3 toppings</p>
+        <ul>
+            <li>1 meat topping.</li>
+            <li>3 or less other toppings.</li>
+        </ul>
+        <button class="button" type="submit" name="buy">BUY</button>
+    </form>
+    </div>
+
+    <div class="four columns box lg--bgr">
+    <form action="/buy" method="POST" class="large">
+        <h2>Large Pizza</h2>
+        <label>R31.99</label>
+        <p>Small pizza with 3 toppings</p>
+        <ul>
+            <li>1 meat topping.</li>
+            <li>3 or less other toppings.</li>
+        </ul>
+        <button class="button" type="submit" name="buy">BUY</button>
+    </form>
+</div>
+
+
+
+    {{!-- <form action="/count" method="post">
         <div class="counter" >
             {{counter}}
         </div>    
         <input type="submit" value="Press button to count">
     
-    </form>
+    </form> --}}
 
-</div>
+    </div>
+    </div>
+</body>
+</html>

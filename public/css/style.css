@@ -10,6 +10,14 @@ body {
 	padding: 1em;
 }
 
+.columns{
+	text-align: center;
+}
+
+h2{
+	font-size: 32px;
+}
+
 
 .counter {
 	background-color: lightgray;
@@ -18,4 +26,17 @@ body {
 	text-align: center;
 	padding: 0.5em;
 	margin-bottom: 0.25em;
+}
+
+/* background colors */
+.small--bgr{
+	background-color: #FFF689;
+}
+
+.med--bgr{
+	background-color: #58355E;
+}
+
+.lg--bgr{
+	background-color: #E03616;
 }

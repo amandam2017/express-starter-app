@@ -1,16 +1,26 @@
 {
   "name": "word-widget-101",
   "version": "1.0.0",
-  "description": "",
+  "description": "A basic ExpressJS application configured with Form support and Handlebars templating.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "mocha"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^5.3.3"
-  }
+    "express-handlebars": "^5.3.3",
+    "express-session": "^1.17.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amandam2017/express-starter-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amandam2017/express-starter-app/issues"
+  },
+  "homepage": "https://github.com/amandam2017/express-starter-app#readme"
 }
