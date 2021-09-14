@@ -17,22 +17,26 @@
 
 
     <div class="row">
-        <table class="twelve columns box">
+        <table class="twelve columns box totals">
             <tr>
                 <td>Small total</td>
-                <td>R<span class="smallPizzaPrice">{{smallCostTotal}}</span>0.00</td>
+                <td>x<span></span></td>
+                <td>R<span class="smallPizzaPrice">{{smallCost}}</span></td>
             </tr>
             <tr>
                 <td>Medium total</td>
-                <td>R<span class="mediumPizzaPrice">{{mediumCostTotal}}</span>0.00</td>
+                <td>x<span></span></td>
+                <td>R<span class="mediumPizzaPrice">{{mediumCost}}</span></td>
             </tr>
             <tr>
                 <td>Large total</td>
-                <td>R<span class="largePizzaPrice">{{largeCostTotal}}</span>0.00</td>
+                <td>x<span></span></td>
+                <td>R<span class="largePizzaPrice">{{largeCost}}</span></td>
             </tr>
             <tr>
-                <td>Total</td>
-                <td> R<span class="grandTotal">{{grandTotal}}</span>0.00</td>
+                <td>Grand Total</td>
+                <td><span></span></td>
+                <td> R<span class="grandTotal">{{grandTotal}}</span></td>
             </tr>
         </table>
         <button class="button" type="submit" name="buy">ORDER</button>
@@ -41,7 +45,7 @@
     <div class="row">
     {{!-- Start here --}}
     <div class="four columns box small--bgr">
-    <form action="/buySmall" method="POST" class="small">
+    <form action="/buySmall" method="POST">
         <h2>Small Pizza</h2>
         <label>R31.99</label>
         <p>Small pizza with 3 toppings</p>
@@ -49,7 +53,7 @@
             <li>1 meat topping.</li>
             <li>3 or less other toppings.</li>
         </ul>
-        <button class="button smallPizzaOrdered" type="submit" name="buy" value="small">BUY</button>
+        <button class="button smallPizzaOrdered" type="submit" name="small" value="small">BUY</button>
     </form>
     </div>
 
@@ -62,7 +66,7 @@
             <li>1 meat topping.</li>
             <li>3 or less other toppings.</li>
         </ul>
-        <button class="button mediumPizzaOrdered" type="submit" name="buy" value="medium">BUY</button>
+        <button class="button mediumPizzaOrdered" type="submit" name="medium" value="medium">BUY</button>
     </form>
     </div>
 
@@ -75,7 +79,7 @@
             <li>1 meat topping.</li>
             <li>3 or less other toppings.</li>
         </ul>
-        <button class="button largePizzaOrdered" type="submit" name="buy" value="large">BUY</button>
+        <button class="button largePizzaOrdered" type="submit" name="large" value="large">BUY</button>
     </form>
 </div>
 

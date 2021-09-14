@@ -1,10 +1,12 @@
 const express = require('express');
 const exphbs  = require('express-handlebars');
-const session = require('express-session')
+// const session = require('express-session')
 //require my factory function
 const pizzaFactory = require('./pizzaCart');
 
 const app = express();
+
+var smallCostTotal = 0;
 
 // enable the req.body object - to allow us to use HTML forms
 app.use(express.json());
@@ -40,59 +42,58 @@ app.use(express.static('public'));
 //add routes *GET* --home, *POST* --forms
 
 app.get('/', function(req,res){
-    
     res.render('index', {
-        buySmall: PizzaInstance.getsmallCostTotal(),
-        buyMedium: PizzaInstance.getMediumCostTotal(),
-        buyLarge: PizzaInstance.getlargeCostTotal(),
+        smallCost: PizzaInstance.getsmallCostTotal(),
+        mediumCost: PizzaInstance.getMediumCostTotal(),
+        largeCost: PizzaInstance.getlargeCostTotal(),
 
-        totals: PizzaInstance.pizzaTotals(),
+        grandTotal: PizzaInstance.grandPizzaTotal(),
     });
 });
 
 //post route for user to add pizza
 app.post('/buySmall', function(req, res){
-	PizzaInstance.buyingPizza({
-		smallCostTotal: req.body.smallCostTotal,
-	})
+	var costSmall = req.body.small
+    console.log(costSmall)
 
-    console.log(PizzaInstance.getsmallCostTotal());
+	 PizzaInstance.buyingPizza(costSmall)
 
 	res.redirect('/');
 
 })
 
 app.post('/buyMedium', function(req, res){
-	PizzaInstance.buyingPizza({
-		mediumCostTotal: req.body.mediumCostTotal,
-	})
+	var costMed = req.body.medium
+    console.log(costMed)
 
-    console.log(PizzaInstance.getMediumCostTotal());
+	 PizzaInstance.buyingPizza(costMed)
 
 	res.redirect('/');
 
 })
 
 app.post('/buyLarge', function(req, res){
-	PizzaInstance.buyingPizza({
-		largeCostTotal: req.body.largeCostTotal,
-	})
+	var costLrg = req.body.large
 
-    console.log(PizzaInstance.getlargeCostTotal());
+	PizzaInstance.buyingPizza(costLrg)
 
-	res.redirect('/');
+	res.redirect('/')
 
 })
+
+//routes for counters
+
+app.post('/count', function(req, res) {
+	counter++;
+	res.redirect('/')
+});
 
 //post route for user to place/send order
 // app.post('/order', function(req, res){
 
 // })
 
-// app.post('/count', function(req, res) {
-// 	counter++;
-// 	res.redirect('/')
-// });
+
 
 const PORT =  process.env.PORT || 3017;
 

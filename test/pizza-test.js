@@ -19,8 +19,6 @@ describe('pizza-cart', function(){
             largeCost : 87.99
 
         }, PizzaInstance.getPizzas())
-
-
     });
 
     
@@ -39,10 +37,10 @@ describe('pizza-cart', function(){
         PizzaInstance.buyingPizza('large');
         
 
-        assert.equal(31.99, PizzaInstance.pizzaTotals().smallCost);
-        assert.equal(58.99, PizzaInstance.pizzaTotals().mediumCost);
-        assert.equal(87.99, PizzaInstance.pizzaTotals().largeCost);
-        assert.equal(178.97, PizzaInstance.pizzaTotals().tota);
+        assert.equal(31.99, PizzaInstance.pizzaTotals());
+        assert.equal(58.99, PizzaInstance.pizzaTotals());
+        assert.equal(87.99, PizzaInstance.pizzaTotals());
+        assert.equal(178.97, PizzaInstance.pizzaTotals());
 
     });
 

@@ -2,71 +2,76 @@
 
 module.exports = function Pizzas(){
 
-    let smallCost = 31.99;
-    let mediumCost = 58.99;
-    let largeCost = 87.99;
+    let smallTotal = 0
+    let mediumTotal = 0;
+    let largeTotal = 0;
+
+    let smallCounter= 0;
+    let largeCounter = 0;
+    let mediumCounter = 0;
 
 
-    let smallCostTotal = 0;
-    let mediumCostTotal = 0;
-    let largeCostTotal = 0;
-    let grandTotal = 0;
+    // function setPizzas (pizzas) {
+    //     smallCost = Number(pizzas.smallCost);
+    //     mediumCost = Number(pizzas.mediumCost);
+    //     largeCost = Number(pizzas.largeCost);
+    // }
 
-
-    function setPizzas (pizzas) {
-        smallCost = Number(pizzas.smallCost);
-        mediumCost = Number(pizzas.mediumCost);
-        largeCost = Number(pizzas.largeCost);
-    }
-
-    function getPizzas() {
-        return {
-            smallCost,
-            mediumCost,
-            largeCost
-        }
-    }
+    // function getPizzas() {
+    //     return {
+    //         smallCost,
+    //         mediumCost,
+    //         largeCost
+    //     }
+    // }
 
     function buyingPizza(pizzaSize) {
 
         if (pizzaSize === 'small'){
-            smallCost += 31.99;
+            smallTotal += 31.99;
+            smallCounter++
         }
         else if (pizzaSize === 'medium' ){
-            mediumCost += 58.99;
+            mediumTotal += 58.99;
+            mediumCounter++
         }
         else if (pizzaSize === 'large' ){
-            largeCost += 87.99;
+            largeTotal += 87.99;
+            largeCounter++
         }
     }
 
     function grandPizzaTotal(){
 
-        return smallCost +  mediumCost + largeCost;
+        return smallTotal +  mediumTotal + largeTotal;
     }
 
     function getsmallCostTotal(){
-        // console.log(total)
-        return smallCost;   
+        return smallTotal;   
     }
 
     function getMediumCostTotal(){
         // console.log(mediumCost)
-        return mediumCost;
+        return mediumTotal;
     }
 
     function getlargeCostTotal(){
         // console.log(largeCost)
-        return largeCost;
+        return largeTotal;
     }
 
     function pizzaTotals() {
 
-        let smallCostTotal = getsmallCostTotal('small').toFixed(2)
+        let smallCostTotal = 0;
+        let mediumCostTotal = 0;
+        let largeCostTotal = 0;
+        // let grandTotal = 0;
+
+        smallCostTotal = getsmallCostTotal('small').toFixed(2)
         // console.log(smallCostTotal)
-        let mediumCostTotal = getMediumCostTotal('medium').toFixed(2)
+        mediumCostTotal = getMediumCostTotal('medium').toFixed(2)
         // console.log(mediumCostTotal)
-        let largeCostTotal = getlargeCostTotal('large').toFixed(2)
+        largeCostTotal = getlargeCostTotal('large').toFixed(2)
         // console.log(largeCostTotal)
 
         
@@ -80,8 +85,8 @@ module.exports = function Pizzas(){
 
 
     return{
-        setPizzas,
-        getPizzas,
+        // setPizzas,
+        // getPizzas,
         buyingPizza,
         grandPizzaTotal,
         getsmallCostTotal,

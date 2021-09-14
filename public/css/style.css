@@ -18,6 +18,10 @@ h2{
 	font-size: 32px;
 }
 
+.totals{
+	border: 2px solid;
+}
+
 
 .counter {
 	background-color: lightgray;
