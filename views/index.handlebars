@@ -38,60 +38,68 @@
                 <td><span></span></td>
                 <td> R<span class="grandTotal">{{grandTotal}}</span></td>
             </tr>
+            <tr>
+                <td><button class="button" type="submit" name="order" value="order">ORDER</button></td>
+            </tr>
         </table>
-        <button class="button" type="submit" name="buy">ORDER</button>
 
     </div>
     <div class="row">
     {{!-- Start here --}}
     <div class="four columns box small--bgr">
     <form action="/buySmall" method="POST">
+    <img src="images/pizza.jpeg"alt="">
         <h2>Small Pizza</h2>
         <label>R31.99</label>
         <p>Small pizza with 3 toppings</p>
-        <ul>
-            <li>1 meat topping.</li>
-            <li>3 or less other toppings.</li>
-        </ul>
+        <div>
+            1 meat topping.
+            3 or less other toppings.
+        </div>
         <button class="button smallPizzaOrdered" type="submit" name="small" value="small">BUY</button>
     </form>
     </div>
 
     <div class="four columns box med--bgr ">
     <form action="/buyMedium" method="POST" class="medium">
+    <img src="images/pizza.jpeg"alt="">
     <h2>Medium Pizza</h2>
         <label>R58.99</label>
         <p>Medium pizza with 3 toppings</p>
-        <ul>
-            <li>1 meat topping.</li>
-            <li>3 or less other toppings.</li>
-        </ul>
+        <div>
+            medium margeritha pizza with 3 toppings max.
+            2 or less meat topping.
+            3 or less other toppings.
+          </div>
         <button class="button mediumPizzaOrdered" type="submit" name="medium" value="medium">BUY</button>
     </form>
     </div>
 
     <div class="four columns box lg--bgr">
     <form action="/buyLarge" method="POST" class="large">
+    <img src="images/pizza.jpeg"alt="">
         <h2>Large Pizza</h2>
         <label>R87.99</label>
         <p>Small pizza with 3 toppings</p>
-        <ul>
-            <li>1 meat topping.</li>
-            <li>3 or less other toppings.</li>
-        </ul>
+        <div>
+            large margeritha pizza with 3 toppings max.
+            3 meat toppings max.
+            3 or less other toppings.
+          </div>
         <button class="button largePizzaOrdered" type="submit" name="large" value="large">BUY</button>
     </form>
 </div>
 
-
-
-    {{!-- <form action="/count" method="post">
+<div class="row">
+    <form action="/count" method="post">
         <div class="counter" >
             {{counter}}
         </div>    
         <input type="submit" value="Press button to count">
     
-    </form> --}}
+    </form>
+</div>
+    
 
     </div>
     </div>

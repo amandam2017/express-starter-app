@@ -81,17 +81,17 @@ app.post('/buyLarge', function(req, res){
 
 })
 
-//routes for counters
+//routes for counter
 
 app.post('/count', function(req, res) {
 	counter++;
 	res.redirect('/')
 });
 
-//post route for user to place/send order
-// app.post('/order', function(req, res){
+// post route for user to place/send order
+app.post('/order', function(req, res){
 
-// })
+})
 
 
 

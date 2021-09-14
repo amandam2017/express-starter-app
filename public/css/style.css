@@ -1,6 +1,7 @@
 body {
 	background-color: greenyellow;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	width:100%;
 }
 
 .container {
@@ -35,6 +36,7 @@ h2{
 /* background colors */
 .small--bgr{
 	background-color: #FFF689;
+	padding-bottom: 50px;
 }
 
 .med--bgr{
