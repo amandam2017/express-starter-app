@@ -2,9 +2,16 @@
 
 module.exports = function Pizzas(){
 
-    let smallCost = 0;
-    let mediumCost = 0;
-    let largeCost = 0;
+    let smallCost = 31.99;
+    let mediumCost = 58.99;
+    let largeCost = 87.99;
+
+
+    let smallCostTotal = 0;
+    let mediumCostTotal = 0;
+    let largeCostTotal = 0;
+    let grandTotal = 0;
+
 
     function setPizzas (pizzas) {
         smallCost = Number(pizzas.smallCost);
@@ -35,34 +42,41 @@ module.exports = function Pizzas(){
 
     function grandPizzaTotal(){
 
-        return smallCost +  smallCost + smallCost;
+        return smallCost +  mediumCost + largeCost;
     }
 
     function getsmallCostTotal(){
+        // console.log(total)
         return smallCost;   
     }
 
     function getMediumCostTotal(){
+        // console.log(mediumCost)
         return mediumCost;
     }
 
     function getlargeCostTotal(){
+        // console.log(largeCost)
         return largeCost;
     }
 
-    // function pizzaTotals() {
+    function pizzaTotals() {
 
-    //     let smallCost = getTotal('small').toFixed(2)
-    //     let mediumCost = getTotal('medium').toFixed(2)
-    //     let largeCost = getTotal('large').toFixed(2)
+        let smallCostTotal = getsmallCostTotal('small').toFixed(2)
+        // console.log(smallCostTotal)
+        let mediumCostTotal = getMediumCostTotal('medium').toFixed(2)
+        // console.log(mediumCostTotal)
+        let largeCostTotal = getlargeCostTotal('large').toFixed(2)
+        // console.log(largeCostTotal)
 
         
-    //     return {
-    //         smsTotal,
-    //         callTotal,
-    //         grandTotal : grandTotal().toFixed(2)
-    //     }
-    // }
+        return {
+            smallCostTotal,
+            mediumCostTotal,
+            largeCostTotal,
+            grandTotal : grandPizzaTotal().toFixed(2)
+        }
+    }
 
 
     return{
@@ -73,6 +87,6 @@ module.exports = function Pizzas(){
         getsmallCostTotal,
         getMediumCostTotal,
         getlargeCostTotal,
-        // pizzaTotals
+        pizzaTotals
     }
 }

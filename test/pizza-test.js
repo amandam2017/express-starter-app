@@ -23,7 +23,28 @@ describe('pizza-cart', function(){
 
     });
 
+    
 
+    it('should display the total for each pizza', function(){
+        const PizzaInstance = pizzaFactory();
+
+        PizzaInstance.setPizzas({
+            smallCost : 31.99,
+            mediumCost : 58.99,
+            largeCost : 87.99
+        });
+
+        PizzaInstance.buyingPizza('small');
+        PizzaInstance.buyingPizza('medium');
+        PizzaInstance.buyingPizza('large');
+        
+
+        assert.equal(31.99, PizzaInstance.pizzaTotals().smallCost);
+        assert.equal(58.99, PizzaInstance.pizzaTotals().mediumCost);
+        assert.equal(87.99, PizzaInstance.pizzaTotals().largeCost);
+        assert.equal(178.97, PizzaInstance.pizzaTotals().tota);
+
+    });
 
     
 });
