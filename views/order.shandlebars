@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="four columns box small--bgr">
+            <form action="/order" method="POST" class="small">
+                <h2>Order</h2>
+                    <label>Small</label>
+                    <input type="text" name="small"/>
+                    <label>Medium</label>
+                    <input type="text" name="medium"/>
+                    <label>Large</label>
+                    <input type="text" name="large"/>
+
+                <button class="button" type="submit" name="buy">CHECKOUT</button>
+            </form>
+        </div>
+    </div>
+</div> 

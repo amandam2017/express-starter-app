@@ -10,21 +10,6 @@ module.exports = function Pizzas(){
     let largeCounter = 0;
     let mediumCounter = 0;
 
-
-    // function setPizzas (pizzas) {
-    //     smallCost = Number(pizzas.smallCost);
-    //     mediumCost = Number(pizzas.mediumCost);
-    //     largeCost = Number(pizzas.largeCost);
-    // }
-
-    // function getPizzas() {
-    //     return {
-    //         smallCost,
-    //         mediumCost,
-    //         largeCost
-    //     }
-    // }
-
     function buyingPizza(pizzaSize) {
 
         if (pizzaSize === 'small'){
@@ -39,6 +24,18 @@ module.exports = function Pizzas(){
             largeTotal += 87.99;
             largeCounter++
         }
+    }
+
+    function getSmallCounter(){
+        return smallCounter
+    }
+
+    function getMediumCounter(){
+        return mediumCounter
+    }
+
+    function getLargeCounter(){
+        return largeCounter
     }
 
     function grandPizzaTotal(){
@@ -92,6 +89,9 @@ module.exports = function Pizzas(){
         getsmallCostTotal,
         getMediumCostTotal,
         getlargeCostTotal,
-        pizzaTotals
+        pizzaTotals,
+        getSmallCounter,
+        getMediumCounter,
+        getLargeCounter
     }
 }

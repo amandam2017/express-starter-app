@@ -7,7 +7,7 @@ describe('pizza-cart', function(){
     const PizzaInstance = pizzaFactory();
 
     it('should be able to set the pizzas', function(){
-        PizzaInstance.setPizzas({
+        PizzaInstance.buyingPizza({
             smallCost : 31.99,
             mediumCost : 58.99,
             largeCost : 87.99
@@ -17,7 +17,7 @@ describe('pizza-cart', function(){
             smallCost : 31.99,
             mediumCost : 58.99,
             largeCost : 87.99
-
+            
         }, PizzaInstance.getPizzas())
     });
 

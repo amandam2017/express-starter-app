@@ -38,7 +38,7 @@ app.use(express.static('public'));
 // configure the session middleware
 // app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}))
 
-// let counter = 0;
+let counter = 0;
 //add routes *GET* --home, *POST* --forms
 
 app.get('/', function(req,res){
@@ -46,17 +46,23 @@ app.get('/', function(req,res){
         smallCost: PizzaInstance.getsmallCostTotal(),
         mediumCost: PizzaInstance.getMediumCostTotal(),
         largeCost: PizzaInstance.getlargeCostTotal(),
+		counterSmall: PizzaInstance.getSmallCounter(),
+		counterMedium: PizzaInstance.getMediumCounter(),
+		counterLarge: PizzaInstance.getLargeCounter(),
 
+		
         grandTotal: PizzaInstance.grandPizzaTotal(),
     });
 });
 
 //post route for user to add pizza
 app.post('/buySmall', function(req, res){
-	var costSmall = req.body.small
-    console.log(costSmall)
+	var costSmall = req.body.small;
+    // console.log(costSmall)
 
 	 PizzaInstance.buyingPizza(costSmall)
+    
+
 
 	res.redirect('/');
 
@@ -64,7 +70,7 @@ app.post('/buySmall', function(req, res){
 
 app.post('/buyMedium', function(req, res){
 	var costMed = req.body.medium
-    console.log(costMed)
+    // console.log(costMed)
 
 	 PizzaInstance.buyingPizza(costMed)
 
@@ -81,17 +87,35 @@ app.post('/buyLarge', function(req, res){
 
 })
 
-//routes for counter
+//routes for 3 pizza sizes counter
 
-app.post('/count', function(req, res) {
-	counter++;
-	res.redirect('/')
+app.post('/buySmall', function(req, res) {
+	console.log(PizzaInstance.getSmallCounter())
+	res.render('index', {
+        counterSmall: PizzaInstance.getSmallCounter(),
+    });
 });
 
-// post route for user to place/send order
-app.post('/order', function(req, res){
 
-})
+// app.post('/buyMedium', function(req, res) {
+// 	res.render('index', {
+//         counterMedium: PizzaInstance.getMediumCounter(),
+//     });
+// });
+
+// app.post('/buyLarge', function(req, res) {
+// 	res.render('index', {
+//         counterLarge: PizzaInstance.getLargeCounter(),
+//     });
+// });
+
+// // post route for user to place/send order
+// app.get('/order', function(req, res){
+// 	res.render('orders', {
+//         counter: PizzaInstance.buyingPizza(),
+//     });
+
+// })
 
 
 
